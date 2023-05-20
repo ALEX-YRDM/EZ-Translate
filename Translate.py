@@ -21,7 +21,7 @@ if __name__=="__main__":
     previous_clip_data=" "
     print("FastTranslator init...")
     while True:
-        data=pyperclip.paste()
+        data=pyperclip.paste().replace("\n","")
         if data!=previous_clip_data:
             previous_clip_data=data
             sign=hashlib.md5((appid+data+salt+passwd).encode()).hexdigest()
